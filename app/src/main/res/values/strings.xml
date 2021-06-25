@@ -12,13 +12,24 @@
     <string name="welcome_line1">Hi Folks! This is basic Shoe Inventory App, which lists out shoes in simple UI.</string>
     <string name="welcome_line2">Clicking \'Next\' provide you some interesting fact about Shoes. Enjoy the experience !</string>
     <string name="instruction_line1">Start navigation to next screen. You\'ll see the list of shoes with default information.\nUse \'+\' sign to add new shoe in the existing list.</string>
-    <string name="instruction_line2">The Logout is avaialble in toolbar on ShoeList screen.\nEnjoy the app by maintaining your own list of shoes.</string>
+    <string name="instruction_line2">The Logout is available in toolbar on ShoeList screen.\nEnjoy the app by maintaining your own list of shoes.</string>
 
     <string name="welcome_next_btn_text">Next</string>
     <string name="instruction_next_btn_text">Next</string>
     <string name="instruction_title">Instructions</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
     <string name="shoe_list_title">Shoes List</string>
     <string name="add_new_shoe_fab_text">Add a new shoe into the list</string>
+    <string name="enter_shoe_name_hint">Enter Shoe Name/Model</string>
+    <string name="shoe_detail_title">Shoe Detail</string>
+    <string name="add_new_shoe_heading">Add New Shoe</string>
+    <string name="shoe_name_title">Shoe Name</string>
+    <string name="shoe_company_title">Shoe Company</string>
+    <string name="enter_shoe_company_hint">Enter Shoe Brand</string>
+    <string name="shoe_size_title">Shoe Size</string>
+    <string name="enter_shoe_size_hint">Enter Your Shoe Size</string>
+    <string name="shoe_notes_title">Shoe Notes</string>
+    <string name="enter_shoe_note_hint">Enter Special Notes</string>
+    <string name="save_btn_text">Save</string>
+    <string name="cancel_btn_text">Cancel</string>
 </resources>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:id="@+id/shoe_item_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="@dimen/common_padding">
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/shoe_card"
+            style="@style/card_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp">
+
+            <LinearLayout
+                android:id="@+id/single_card_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/card_padding">
+
+                <TextView
+                    android:id="@+id/shoe_name_card_text"
+                    style="@style/card_heading_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Shoe 1"
+                    tools:text="Shoe 1" />
+
+                <LinearLayout
+                    android:id="@+id/shoe_info_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/shoe_company_card_text"
+                        style="@style/card_secondary_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Shoe Company"
+                        tools:text="Shoe Company" />
+
+                    <TextView
+                        android:id="@+id/shoe_size_card_text"
+                        style="@style/card_secondary_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Size: 10 US"
+                        tools:text="Size: 10 US" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/shoe_description_card_text"
+                    style="@style/card_secondary_text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="This shoes is made of pure leather and covered in warranty.\nNew version available at every Fall of the year."
+                    tools:text="This shoes is made of pure leather and covered in warranty.\nNew version available at every Fall of the year." />
+
+            </LinearLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+
+</layout>
