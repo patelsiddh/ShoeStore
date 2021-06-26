@@ -32,4 +32,5 @@
     <string name="enter_shoe_note_hint">Enter Special Notes</string>
     <string name="save_btn_text">Save</string>
     <string name="cancel_btn_text">Cancel</string>
+    <string name="shoe_size_card_text">Size: %s US</string>
 </resources>

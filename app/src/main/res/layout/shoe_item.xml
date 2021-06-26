@@ -14,7 +14,7 @@
             style="@style/card_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="8dp">
+            android:padding="4dp">
 
             <LinearLayout
                 android:id="@+id/single_card_layout"
@@ -28,7 +28,6 @@
                     style="@style/card_heading_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Shoe 1"
                     tools:text="Shoe 1" />
 
                 <LinearLayout
@@ -41,16 +40,13 @@
                         style="@style/card_secondary_text"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Shoe Company"
                         tools:text="Shoe Company" />
 
                     <TextView
                         android:id="@+id/shoe_size_card_text"
                         style="@style/card_secondary_text"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Size: 10 US"
-                        tools:text="Size: 10 US" />
+                        android:layout_height="wrap_content"/>
                 </LinearLayout>
 
                 <TextView
@@ -58,7 +54,6 @@
                     style="@style/card_secondary_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="This shoes is made of pure leather and covered in warranty.\nNew version available at every Fall of the year."
                     tools:text="This shoes is made of pure leather and covered in warranty.\nNew version available at every Fall of the year." />
 
             </LinearLayout>
