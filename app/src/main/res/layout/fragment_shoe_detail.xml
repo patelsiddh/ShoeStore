@@ -66,7 +66,6 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="12dp"
                 android:ems="10"
-                android:text="@{shoesViewModel.shoeName}"
                 android:hint="@string/enter_shoe_name_hint"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -101,7 +100,6 @@
                 android:layout_marginEnd="12dp"
                 android:ems="10"
                 android:hint="@string/enter_shoe_company_hint"
-                android:text="@{shoesViewModel.shoeCompany}"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/shoe_company_text"
@@ -135,7 +133,6 @@
                 android:layout_marginEnd="12dp"
                 android:ems="10"
                 android:hint="@string/enter_shoe_size_hint"
-                android:text="@{shoesViewModel.shoeSize}"
                 android:inputType="numberDecimal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/shoe_size_text"
@@ -169,27 +166,41 @@
                 android:layout_marginEnd="12dp"
                 android:ems="10"
                 android:hint="@string/enter_shoe_note_hint"
-                android:text="@{shoesViewModel.shoeInfo}"
                 android:inputType="textMultiLine"
                 android:lines="3"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/shoe_detail_text"
                 app:layout_constraintTop_toBottomOf="@+id/shoe_size_edit" />
 
+            <TextView
+                android:id="@+id/error_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:fontFamily="@font/allerta"
+                android:textColor="@color/design_default_color_error"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/shoe_detail_edit"
+                tools:text="Error Text" />
+
             <Button
                 android:id="@+id/save_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="64dp"
                 android:fontFamily="@font/allerta"
-                android:text="@string/save_btn_text"
                 android:onClick="@{() -> shoeInfoFragment.saveShoeItem()}"
+                android:text="@string/save_btn_text"
                 app:layout_constraintBaseline_toBaselineOf="@+id/cancel_btn"
                 app:layout_constraintEnd_toStartOf="@+id/cancel_btn"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_detail_edit" />
+                app:layout_constraintTop_toBottomOf="@+id/error_text" />
 
             <Button
                 android:id="@+id/cancel_btn"
@@ -197,12 +208,13 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
+                android:layout_marginEnd="12dp"
                 android:fontFamily="@font/allerta"
                 android:onClick="@{() -> shoeInfoFragment.goToShoeListFragment()}"
                 android:text="@string/cancel_btn_text"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/save_btn"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_detail_edit" />
+                app:layout_constraintTop_toBottomOf="@+id/error_text" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

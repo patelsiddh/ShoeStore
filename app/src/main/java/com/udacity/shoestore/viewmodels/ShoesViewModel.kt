@@ -12,23 +12,17 @@ class ShoesViewModel() : ViewModel(){
     private val _shoesList = MutableLiveData<List<Shoe>>()
     val shoesList: LiveData<List<Shoe>> = _shoesList
 
-    private val _shoeName = MutableLiveData<String>()
-    val shoeName : LiveData<String>
-    get() = _shoeName
+    //private val _shoeName = MutableLiveData<String>()
+    private lateinit var shoeName: String
 
-    private val _shoeSize = MutableLiveData<String>()
-    val shoeSize : LiveData<String>
-        get() = _shoeSize
+    //private val _shoeSize = MutableLiveData<String>()
+    private lateinit var shoeSize: String
 
-    private val shoeSizeNumeric = (shoeSize.value?.toDouble()) ?: 0.0
+    //private val _shoeCompany = MutableLiveData<String>()
+    private lateinit var shoeCompany: String
 
-    private val _shoeCompany = MutableLiveData<String>()
-    val shoeCompany : LiveData<String>
-        get() = _shoeCompany
-
-    private val _shoeInfo = MutableLiveData<String>()
-    val shoeInfo : LiveData<String>
-        get() = _shoeInfo
+    //private val _shoeInfo = MutableLiveData<String>()
+    private lateinit var shoeInfo: String
 
     init {
         loadDefaultShoes()
@@ -43,12 +37,16 @@ class ShoesViewModel() : ViewModel(){
         _shoesList.value = shoesItemList
     }
 
-    fun saveShoeItem() {
-        val newShoe = Shoe(
-            shoeName.value ?: "Sample Shoe Name",
-            shoeSizeNumeric, shoeCompany.value ?: "Sample Shoe Company",
-            shoeInfo.value ?: "Sample Shoe Description"
-        )
+    fun saveShoeItem(name: String, size: String, company: String, info: String) {
+
+        shoeName= name
+        shoeSize = size
+        shoeCompany = company
+        shoeInfo = info
+
+        val shoeSizeNumeric = shoeSize.toDouble()
+
+        val newShoe = Shoe(shoeName, shoeSizeNumeric, shoeCompany, shoeInfo)
 
         val tempShoesList = shoesItemList.toMutableList()
         shoesItemList.clear()

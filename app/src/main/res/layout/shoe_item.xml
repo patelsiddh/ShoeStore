@@ -26,14 +26,15 @@
                 <TextView
                     android:id="@+id/shoe_name_card_text"
                     style="@style/card_heading_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:text="Shoe 1" />
 
                 <LinearLayout
                     android:id="@+id/shoe_info_layout"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
 
                     <TextView
                         android:id="@+id/shoe_company_card_text"
@@ -46,13 +47,14 @@
                         android:id="@+id/shoe_size_card_text"
                         style="@style/card_secondary_text"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"/>
+                        android:layout_height="wrap_content"
+                        tools:text="Size: 10 US"/>
                 </LinearLayout>
 
                 <TextView
                     android:id="@+id/shoe_description_card_text"
                     style="@style/card_secondary_text"
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     tools:text="This shoes is made of pure leather and covered in warranty.\nNew version available at every Fall of the year." />
 
