@@ -66,6 +66,7 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="12dp"
                 android:ems="10"
+                android:text="@={shoesViewModel.shoeName}"
                 android:hint="@string/enter_shoe_name_hint"
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"

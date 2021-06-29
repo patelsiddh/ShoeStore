@@ -11,6 +11,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
 import com.udacity.shoestore.viewmodels.ShoesViewModel
+import timber.log.Timber
 
 /**
  * A simple [Fragment] subclass.
@@ -50,6 +51,7 @@ class ShoeDetailFragment : Fragment() {
             setErrorTextField(true)
         }
         else {
+            Timber.i("Entered Shoe Name: ${sharedShoesViewModel.shoeName} ")
             sharedShoesViewModel.saveShoeItem(name, size, company, info)
             goToShoeListFragment()
         }

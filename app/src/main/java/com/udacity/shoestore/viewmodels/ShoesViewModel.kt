@@ -4,6 +4,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.udacity.shoestore.models.Shoe
+import timber.log.Timber
 
 class ShoesViewModel() : ViewModel(){
 
@@ -12,8 +13,8 @@ class ShoesViewModel() : ViewModel(){
     private val _shoesList = MutableLiveData<List<Shoe>>()
     val shoesList: LiveData<List<Shoe>> = _shoesList
 
-    //private val _shoeName = MutableLiveData<String>()
-    private lateinit var shoeName: String
+    private val _shoeName = MutableLiveData<String>()
+    val shoeName: LiveData<String> get() = _shoeName
 
     //private val _shoeSize = MutableLiveData<String>()
     private lateinit var shoeSize: String
@@ -39,14 +40,13 @@ class ShoesViewModel() : ViewModel(){
 
     fun saveShoeItem(name: String, size: String, company: String, info: String) {
 
-        shoeName= name
+       //shoeName= name
         shoeSize = size
         shoeCompany = company
         shoeInfo = info
-
         val shoeSizeNumeric = shoeSize.toDouble()
 
-        val newShoe = Shoe(shoeName, shoeSizeNumeric, shoeCompany, shoeInfo)
+        val newShoe = Shoe(_shoeName.value?:"No name", shoeSizeNumeric, shoeCompany, shoeInfo)
 
         val tempShoesList = shoesItemList.toMutableList()
         shoesItemList.clear()
