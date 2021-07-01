@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import com.udacity.shoestore.databinding.FragmentShoeDetailBinding
+import com.udacity.shoestore.models.Shoe
 import com.udacity.shoestore.viewmodels.ShoesViewModel
 import timber.log.Timber
 
@@ -34,24 +35,24 @@ class ShoeDetailFragment : Fragment() {
 
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
-            shoesViewModel = sharedShoesViewModel
             shoeInfoFragment = this@ShoeDetailFragment
+            shoe = Shoe("",0.0,"","")
         }
 
         return binding.root
     }
 
     fun saveShoeItem() {
-        val name = binding.shoeNameEdit.text.toString()
-        val company = binding.shoeCompanyEdit.text.toString()
+        val shoeBinder = binding.shoe
+        val name = shoeBinder?.name
+        val company = shoeBinder?.company
         val size = binding.shoeSizeEdit.text.toString()
-        val info = binding.shoeDetailEdit.text.toString()
+        val info = shoeBinder?.description
 
-        if (name.isEmpty() || company.isEmpty() || size.isEmpty() || info.isEmpty()) {
+        if (name!!.isEmpty() || company!!.isEmpty() || size.isEmpty() || info!!.isEmpty()) {
             setErrorTextField(true)
         }
         else {
-            Timber.i("Entered Shoe Name: ${sharedShoesViewModel.shoeName} ")
             sharedShoesViewModel.saveShoeItem(name, size, company, info)
             goToShoeListFragment()
         }
