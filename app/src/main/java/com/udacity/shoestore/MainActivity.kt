@@ -41,4 +41,9 @@ class MainActivity : AppCompatActivity() {
             else -> navController.navigateUp(appBarConfig) || super.onSupportNavigateUp()
         }
     }
+
+    /*override fun onBackPressed() {
+        val dest = navController.currentDestination?.id
+        super.onBackPressed()
+    }*/
 }

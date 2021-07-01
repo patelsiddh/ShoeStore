@@ -35,4 +35,5 @@
     <string name="shoe_size_card_text">Size: %s US</string>
 
     <string name="error_text">Please fill all the fields</string>
+    <string name="logout_text">Logout</string>
 </resources>
