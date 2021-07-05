@@ -1,5 +1,6 @@
 package com.udacity.shoestore.utility
 
+import androidx.databinding.InverseMethod
 import timber.log.Timber
 
 class Converter {
@@ -12,4 +13,9 @@ class Converter {
                 ""
             }
         }
+
+    @InverseMethod("toText")
+    fun toDecimal(sizeText: String): Double{
+        return sizeText.toDouble()
+    }
 }
