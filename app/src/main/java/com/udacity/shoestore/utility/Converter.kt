@@ -7,12 +7,15 @@ import java.text.ParseException
 
 object Converter {
        @InverseMethod("textToDecimal")
-        fun decimalToText(view: TextView, shoeOldSize: Double, shoeSize: Double): String {
+        @JvmStatic fun decimalToText(view: TextView, shoeOldSize: Double, shoeSize: Double): String {
             try {
                 val editTextValue = view.text.toString()
-                val parsedValue = editTextValue.toDouble()
-                if (parsedValue == shoeSize)
-                    return view.text.toString()
+                if (!editTextValue.isNullOrEmpty())
+                {
+                    val parsedValue = editTextValue.toDouble()
+                    if (parsedValue == shoeSize)
+                        return view.text.toString()
+                }
             }
             catch (ex: ParseException) {
                 Timber.e("Something wrong with shoe size number")
@@ -20,7 +23,7 @@ object Converter {
            return shoeSize.toString()
         }
 
-    fun textToDecimal(view: TextView, shoeOldSize: Double, shoeSize: String): Double {
+    @JvmStatic fun textToDecimal(view: TextView, shoeOldSize: Double, shoeSize: String): Double {
         try {
             return shoeSize.toDouble()
         }

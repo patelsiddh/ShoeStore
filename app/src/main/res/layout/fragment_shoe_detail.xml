@@ -10,9 +10,7 @@
         <variable
             name="shoeInfoFragment"
             type="com.udacity.shoestore.ShoeDetailFragment" />
-        <variable
-            name="Convert"
-            type="com.udacity.shoestore.utility.Converter" />
+        <import type="com.udacity.shoestore.utility.Converter"/>
     </data>
     
     <androidx.core.widget.NestedScrollView
@@ -138,7 +136,7 @@
                 android:layout_marginEnd="12dp"
                 android:ems="10"
                 android:hint="@string/enter_shoe_size_hint"
-                android:text="@={Convert.decimalToText(shoeSizeEdit, shoe.size, shoe.size)}"
+                android:text="@={Converter.decimalToText(shoeSizeEdit, shoe.size, shoe.size)}"
                 android:inputType="numberDecimal"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/shoe_size_text"
