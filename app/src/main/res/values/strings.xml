@@ -1,12 +1,9 @@
 <resources>
     <string name="app_name">ShoeStore</string>
-    <string name="email_text">Email</string>
-    <string name="enter_your_email_hint_text">Input your email id</string>
-    <string name="password_text">Password</string>
-    <string name="enter_password_hint_text">Input password</string>
+    <string name="email_hint_text">Email Id</string>
+    <string name="password_hint_text">Password</string>
     <string name="login_btn_text">Use an account</string>
     <string name="guest_btn_text">Be a Guest</string>
-    <string name="login_title">ShoeStore - Login</string>
     <string name="welcome_title">Welcome</string>
 
     <string name="welcome_line1">Hi Folks! This is basic Shoe Inventory App, which lists out shoes in simple UI.</string>

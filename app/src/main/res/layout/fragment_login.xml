@@ -8,68 +8,72 @@
             name="loginFragment"
             type="com.udacity.shoestore.LoginFragment" />
     </data>
-    
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loginConstraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".LoginFragment">
 
-        <TextView
-            android:id="@+id/email_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="204dp"
-            android:fontFamily="@font/allerta"
-            android:text="@string/email_text"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:text="Email Id" />
-
-        <EditText
-            android:id="@+id/email_edit"
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/shoe_icon_image"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="225dp"
             android:layout_marginStart="16dp"
-            android:ems="10"
-            android:hint="@string/enter_your_email_hint_text"
-            android:inputType="textEmailAddress"
-            app:layout_constraintBottom_toTopOf="@+id/password_text"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/ic_launcher_foreground"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email_text" />
+            app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/password_text"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="12dp"
-            android:fontFamily="@font/allerta"
-            android:text="@string/password_text"
-            android:textSize="16sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/email_edit"
-            tools:text="Password" />
 
-        <EditText
-            android:id="@+id/password_edit"
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/email_layout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="8dp"
-            android:ems="10"
-            android:hint="@string/enter_password_hint_text"
-            android:inputType="textPassword"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/email_hint_text"
+            app:endIconMode="clear_text"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_text" />
+            app:layout_constraintTop_toBottomOf="@id/shoe_icon_image"
+            app:startIconDrawable="@drawable/ic_user">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/email_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="@font/allerta"
+                android:inputType="textEmailAddress" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/password_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:hint="@string/password_hint_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/email_layout"
+            app:startIconDrawable="@drawable/ic_pswrd">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/password_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:fontFamily="@font/allerta"
+                android:inputType="textPassword" />
+
+        </com.google.android.material.textfield.TextInputLayout>
 
         <TextView
             android:id="@+id/validation_error_text"
@@ -82,7 +86,7 @@
             android:textColor="@color/design_default_color_error"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/password_edit"
+            app:layout_constraintTop_toBottomOf="@+id/password_layout"
             tools:text="Validation Text" />
 
         <Button
@@ -90,11 +94,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
-            android:text="@string/login_btn_text"
             android:onClick="@{() -> loginFragment.tryToLogin()}"
+            android:text="@string/login_btn_text"
             app:layout_constraintBaseline_toBaselineOf="@+id/guest_btn"
-            app:layout_constraintLeft_toLeftOf="parent"
-            app:layout_constraintRight_toLeftOf="@+id/guest_btn"/>
+            app:layout_constraintEnd_toStartOf="@+id/guest_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/guest_btn"
@@ -103,8 +108,9 @@
             android:layout_marginTop="8dp"
             android:onClick="@{() -> loginFragment.goToWelcomePage()}"
             android:text="@string/guest_btn_text"
-            app:layout_constraintLeft_toRightOf="@+id/login_btn"
-            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/login_btn"
             app:layout_constraintTop_toBottomOf="@+id/validation_error_text" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
