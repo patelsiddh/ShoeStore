@@ -4,8 +4,8 @@
     <string name="enter_your_email_hint_text">Input your email id</string>
     <string name="password_text">Password</string>
     <string name="enter_password_hint_text">Input password</string>
-    <string name="login_btn_text">Login</string>
-    <string name="signup_btn_text">Sign UP</string>
+    <string name="login_btn_text">Use an account</string>
+    <string name="guest_btn_text">Be a Guest</string>
     <string name="login_title">ShoeStore - Login</string>
     <string name="welcome_title">Welcome</string>
 
@@ -35,5 +35,6 @@
     <string name="shoe_size_card_text">Size: %s US</string>
 
     <string name="error_text">Please fill all the fields</string>
+    <string name="validation_error_msg">Username or password is empty</string>
     <string name="logout_text">Logout</string>
 </resources>

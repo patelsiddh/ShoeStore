@@ -38,6 +38,11 @@ class MainActivity : AppCompatActivity() {
                 navController.navigate(ShoeListFragmentDirections.actionShoeListFragmentToLoginFragment())
                 true
             }
+            R.id.instructionFragment ->
+            {
+                navController.navigate(InstructionFragmentDirections.actionInstructionFragmentToLoginFragment())
+                true
+            }
             else -> navController.navigateUp(appBarConfig) || super.onSupportNavigateUp()
         }
     }

@@ -46,7 +46,7 @@ class ShoeDetailFragment : Fragment() {
         val shoeBinder = binding.shoe
         val name = shoeBinder?.name
         val company = shoeBinder?.company
-        val size = shoeBinder?.size//binding.shoeSizeEdit.text.toString()
+        val size = shoeBinder?.size
         val info = shoeBinder?.description
 
         if (name!!.isEmpty() || company!!.isEmpty() || size!!.isNaN() || info!!.isEmpty()) {
