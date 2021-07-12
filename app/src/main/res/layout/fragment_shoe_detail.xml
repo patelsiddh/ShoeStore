@@ -40,7 +40,7 @@
                 app:layout_constraintTop_toTopOf="parent"
                 tools:text="Add new shoe" />
 
-            <TextView
+            <!--<TextView
                 android:id="@+id/shoe_name_text"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -59,8 +59,8 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/new_shoe_title_text"
                 tools:text="Name" />
-
-            <EditText
+-->
+            <!--<EditText
                 android:id="@+id/shoe_name_edit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -72,112 +72,114 @@
                 android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/shoe_name_text"
-                app:layout_constraintTop_toBottomOf="@+id/new_shoe_title_text" />
+                app:layout_constraintTop_toBottomOf="@+id/new_shoe_title_text" />-->
 
-            <TextView
-                android:id="@+id/shoe_company_text"
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoe_name_layout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="@font/allerta"
-                android:text="@string/shoe_company_title"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-                android:textSize="16sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/shoe_company_edit"
-                app:layout_constraintEnd_toStartOf="@+id/shoe_company_edit"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/enter_shoe_name_hint_text"
+                app:endIconMode="clear_text"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_name_text"
-                tools:text="Company" />
-
-            <EditText
-                android:id="@+id/shoe_company_edit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="12dp"
-                android:ems="10"
-                android:hint="@string/enter_shoe_company_hint"
-                android:text="@={shoe.company}"
-                android:inputType="textPersonName"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/shoe_company_text"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_name_edit" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/new_shoe_title_text"
+                app:startIconDrawable="@drawable/ic_shoe_name">
 
-            <TextView
-                android:id="@+id/shoe_size_text"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/shoe_name_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/allerta"
+                    android:inputType="textPersonName"
+                    android:text="@={shoe.name}"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoe_company_layout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="@font/allerta"
-                android:text="@string/shoe_size_title"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-                android:textSize="16sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/shoe_size_edit"
-                app:layout_constraintEnd_toStartOf="@+id/shoe_size_edit"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/enter_shoe_company_hint_text"
+                app:endIconMode="clear_text"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_company_text"
-                tools:text="Size" />
-
-            <EditText
-                android:id="@+id/shoe_size_edit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="12dp"
-                android:ems="10"
-                android:hint="@string/enter_shoe_size_hint"
-                android:text="@={Converter.decimalToText(shoeSizeEdit, shoe.size, shoe.size)}"
-                android:inputType="numberDecimal"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/shoe_size_text"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_company_edit" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoe_name_layout"
+                app:startIconDrawable="@drawable/ic_shoe_company">
 
-            <TextView
-                android:id="@+id/shoe_detail_text"
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/shoe_company_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/allerta"
+                    android:inputType="textPersonName"
+                    android:text="@={shoe.company}"/>
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoe_size_layout"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="12dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="8dp"
-                android:fontFamily="@font/allerta"
-                android:text="@string/shoe_notes_title"
-                android:textAlignment="center"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle2"
-                android:textSize="16sp"
-                app:layout_constraintBaseline_toBaselineOf="@+id/shoe_detail_edit"
-                app:layout_constraintEnd_toStartOf="@+id/shoe_detail_edit"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/enter_shoe_size_hint_text"
+                app:endIconMode="clear_text"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="spread"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_size_text"
-                tools:text="Notes" />
-
-            <EditText
-                android:id="@+id/shoe_detail_edit"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="12dp"
-                android:ems="10"
-                android:hint="@string/enter_shoe_note_hint"
-                android:text="@={shoe.description}"
-                android:inputType="textMultiLine"
-                android:lines="3"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/shoe_detail_text"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_size_edit" />
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoe_company_layout"
+                app:startIconDrawable="@drawable/ic_shoe_size">
 
-            <TextView
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/shoe_size_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/allerta"
+                    android:inputType="numberDecimal"
+                    android:text="@={Converter.decimalToText(shoeSizeEdit, shoe.size, shoe.size)}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/shoe_info_layout"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="16dp"
+                android:hint="@string/enter_shoe_note_hint_text"
+                app:endIconMode="clear_text"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/shoe_size_layout"
+                app:startIconDrawable="@drawable/ic_shoe_detail">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/shoe_detail_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:fontFamily="@font/allerta"
+                    android:inputType="textMultiLine"
+                    android:lines="3"
+                    android:text="@={shoe.description}" />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+         <TextView
                 android:id="@+id/error_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -189,7 +191,7 @@
                 android:visibility="gone"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/shoe_detail_edit"
+                app:layout_constraintTop_toBottomOf="@+id/shoe_info_layout"
                 tools:text="Error Text" />
 
             <Button
@@ -214,6 +216,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="12dp"
+                android:backgroundTint="?attr/colorSecondaryVariant"
                 android:fontFamily="@font/allerta"
                 android:onClick="@{() -> shoeInfoFragment.goToShoeListFragment()}"
                 android:text="@string/cancel_btn_text"

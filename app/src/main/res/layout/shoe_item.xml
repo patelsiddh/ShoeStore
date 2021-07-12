@@ -11,7 +11,6 @@
 
         <com.google.android.material.card.MaterialCardView
             android:id="@+id/shoe_card"
-            style="@style/card_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="4dp">
