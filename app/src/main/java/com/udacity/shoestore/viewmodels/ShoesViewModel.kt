@@ -12,8 +12,15 @@ class ShoesViewModel() : ViewModel(){
     private val _shoesList = MutableLiveData<List<Shoe>>()
     val shoesList: LiveData<List<Shoe>> = _shoesList
 
+    lateinit var shoeItem: Shoe
+
     init {
         loadDefaultShoes()
+        resetShoeItem()
+    }
+
+    fun resetShoeItem() {
+        shoeItem = Shoe("",0.0,"","")
     }
 
     private fun loadDefaultShoes() {
@@ -34,6 +41,7 @@ class ShoesViewModel() : ViewModel(){
         shoesItemList = tempShoesList
 
         _shoesList.value = shoesItemList
+        resetShoeItem()
 
     }
 

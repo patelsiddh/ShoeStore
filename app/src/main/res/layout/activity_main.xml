@@ -2,6 +2,11 @@
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Wrapping every fragment layout within this nested scrollview as
+         smaller android devices may not leave space for buttons, which are at bottom of screen.
+         To avoid that bad UX, every fragment must wrapped inside scroll view.
+    -->
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

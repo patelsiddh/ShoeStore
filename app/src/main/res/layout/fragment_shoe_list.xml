@@ -3,6 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!-- Using constraint view to arrange UI elements make sure that it looks identical
+         no matter which size of android device the app runs on. In addition, it lays UI elements with constraint referring to other UI elements
+         making sure the correct size and shape.
+    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -19,7 +23,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
-                android:padding="8dp"
+                android:padding="@dimen/common_padding"
                 tools:context=".ShoeListFragment">
 
             </LinearLayout>
@@ -29,13 +33,13 @@
             android:id="@+id/add_shoe_floating_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="@dimen/common_padding"
+            android:layout_marginBottom="@dimen/common_padding"
             android:layout_gravity="bottom|end"
             android:contentDescription="@string/add_new_shoe_fab_text"
             android:src="@drawable/ic_add_new_shoe_24"
             app:fabSize="auto"
-            android:elevation="8dp"
+            android:elevation="@dimen/common_padding"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 

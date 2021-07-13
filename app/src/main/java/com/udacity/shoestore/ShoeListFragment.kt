@@ -62,11 +62,12 @@ class ShoeListFragment : Fragment() {
         shoes.forEach {
             val shoeBinding = ShoeItemBinding.inflate(LayoutInflater.from(requireContext()), binding!!.shoeListLayout, false)
 
-            shoeBinding.shoeNameCardText.text = it.name
-            shoeBinding.shoeCompanyCardText.text = it.company
-            shoeBinding.shoeSizeCardText.text =
-                getString(R.string.shoe_size_card_text, it.size.toString())
-            shoeBinding.shoeDescriptionCardText.text = it.description
+            with(shoeBinding){
+                shoeNameCardText.text = it.name
+                shoeCompanyCardText.text = it.company
+                shoeSizeCardText.text = getString(R.string.shoe_size_card_text, it.size.toString())
+                shoeDescriptionCardText.text = it.description
+            }
 
             binding!!.shoeListLayout.addView(shoeBinding.root)
         }

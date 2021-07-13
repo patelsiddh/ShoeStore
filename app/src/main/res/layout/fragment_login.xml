@@ -9,6 +9,10 @@
             type="com.udacity.shoestore.LoginFragment" />
     </data>
 
+    <!-- Using constraint view to arrange UI elements make sure that it looks identical
+         no matter which size of android device the app runs on. In addition, it lays UI elements with constraint referring to other UI elements
+         making sure the correct size and shape.
+    -->
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/loginConstraint"
         android:layout_width="match_parent"
@@ -33,7 +37,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_extra_padding"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/common_padding"
             android:layout_marginEnd="@dimen/common_extra_padding"
             android:hint="@string/email_hint_text"
             app:endIconMode="clear_text"
@@ -80,7 +84,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/common_extra_padding"
-            android:layout_marginTop="12dp"
+            android:layout_marginTop="@dimen/common_distance_padding"
             android:layout_marginEnd="@dimen/common_extra_padding"
             android:fontFamily="@font/allerta"
             android:textColor="@color/design_default_color_error"
@@ -105,7 +109,7 @@
             android:id="@+id/guest_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="@dimen/common_padding"
             android:backgroundTint="?attr/colorSecondaryVariant"
             android:onClick="@{() -> loginFragment.goToWelcomePage()}"
             android:text="@string/guest_btn_text"

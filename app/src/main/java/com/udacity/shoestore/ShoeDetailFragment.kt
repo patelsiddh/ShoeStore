@@ -36,7 +36,7 @@ class ShoeDetailFragment : Fragment() {
         binding.apply {
             lifecycleOwner = viewLifecycleOwner
             shoeInfoFragment = this@ShoeDetailFragment
-            shoe = Shoe("",0.0,"","")
+            shoe = sharedShoesViewModel.shoeItem
         }
 
         return binding.root
@@ -60,7 +60,11 @@ class ShoeDetailFragment : Fragment() {
 
     }
 
-    fun goToShoeListFragment() = findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+    fun goToShoeListFragment()
+    {
+        findNavController().navigate(ShoeDetailFragmentDirections.actionShoeDetailFragmentToShoeListFragment())
+        sharedShoesViewModel.resetShoeItem()
+    }
 
     private fun setErrorTextField(error: Boolean)
     {

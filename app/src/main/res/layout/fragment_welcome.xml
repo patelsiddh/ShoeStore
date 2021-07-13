@@ -9,6 +9,10 @@
         tools:context=".WelcomeFragment"
         android:fillViewport="true">
 
+        <!-- Using constraint view to arrange UI elements make sure that it looks identical
+         no matter which size of android device the app runs on. In addition, it lays UI elements with constraint referring to other UI elements
+         making sure the correct size and shape.
+        -->
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/welcome_layout"
             android:layout_width="match_parent"
@@ -31,9 +35,9 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_extra_padding"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/common_padding"
                 android:layout_marginEnd="@dimen/common_extra_padding"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="@dimen/common_padding"
                 android:fontFamily="@font/allerta"
                 android:text="@string/welcome_line1"
                 android:textSize="16sp"
@@ -47,7 +51,7 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/common_extra_padding"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/common_padding"
                 android:layout_marginEnd="@dimen/common_extra_padding"
                 android:fontFamily="@font/allerta"
                 android:text="@string/welcome_line2"
@@ -60,7 +64,7 @@
                 android:id="@+id/welcome_next_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/common_padding"
                 android:layout_marginBottom="@dimen/common_extra_padding"
                 android:fontFamily="@font/allerta"
                 android:text="@string/welcome_next_btn_text"
