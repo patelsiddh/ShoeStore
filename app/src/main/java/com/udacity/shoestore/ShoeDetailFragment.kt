@@ -42,6 +42,7 @@ class ShoeDetailFragment : Fragment() {
         return binding.root
     }
 
+    // Save the details of shoe entered by user when clicked on "SAVE" button
     fun saveShoeItem() {
         val shoeBinder = binding.shoe
         val name = shoeBinder?.name

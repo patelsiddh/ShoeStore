@@ -22,12 +22,6 @@
         <item name="materialCardViewStyle">@style/Widget.App.CardView</item>
     </style>
 
-    <style name="card_container">
-        <item name="android:layout_margin">@dimen/common_layout_margin</item>
-        <item name="android:elevation">@dimen/card_elevation</item>
-        <item name="android:padding">@dimen/card_padding</item>
-    </style>
-
     <style name="card_secondary_text">
         <item name="android:layout_marginStart">@dimen/cardtext_left_margin</item>
         <item name="android:layout_marginTop">8dp</item>
@@ -47,8 +41,10 @@
     <style name="Widget.App.CardView" parent="Widget.MaterialComponents.CardView">
         <item name="materialThemeOverlay">@style/ThemeOverlay.App.Card</item>
         <item name="shapeAppearance">@style/ShapeAppearance.App.MediumComponent</item>
+        <item name="android:layout_margin">@dimen/common_layout_margin</item>
+        <item name="android:elevation">@dimen/card_elevation</item>
+        <item name="android:padding">@dimen/card_padding</item>
     </style>
-
     <style name="ThemeOverlay.App.Card" parent="">
         <item name="colorPrimary">@color/blue</item>
         <item name="colorSurface">@color/blue_light</item>

@@ -57,6 +57,7 @@ class ShoeListFragment : Fragment() {
         return binding!!.root
     }
 
+    // Manually generating a view that adds shoe details value in a single cardview
     private fun addShoeListView(shoes: List<Shoe>) {
         shoes.forEach {
             val shoeBinding = ShoeItemBinding.inflate(LayoutInflater.from(requireContext()), binding!!.shoeListLayout, false)

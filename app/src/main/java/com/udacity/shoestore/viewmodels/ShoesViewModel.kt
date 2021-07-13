@@ -26,13 +26,6 @@ class ShoesViewModel() : ViewModel(){
     }
 
     fun saveShoeItem(name: String, size: Double, company: String, info: String) {
-
-       //shoeName= name
-        /*shoeSize = size
-        shoeCompany = company
-        shoeInfo = info
-        val shoeSizeNumeric = shoeSize.toDouble()*/
-
         val newShoe = Shoe(name, size, company, info)
 
         val tempShoesList = shoesItemList.toMutableList()
