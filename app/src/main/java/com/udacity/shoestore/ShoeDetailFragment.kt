@@ -31,7 +31,7 @@ class ShoeDetailFragment : Fragment() {
     ): View {
 
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_detail, container, false)
+        binding = FragmentShoeDetailBinding.inflate(inflater, container, false)
 
         binding.apply {
             lifecycleOwner = viewLifecycleOwner

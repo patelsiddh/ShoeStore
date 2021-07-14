@@ -39,7 +39,7 @@ class ShoeListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_shoe_list, container, false)
+        binding = FragmentShoeListBinding.inflate(inflater, container, false)
         setHasOptionsMenu(true)
 
         binding!!.addShoeFloatingButton.setOnClickListener {view ->
